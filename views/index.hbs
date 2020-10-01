@@ -1,0 +1,64 @@
+<h4>Endpoint List: </h4>
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#userroutes" role="button" aria-expanded="true" aria-controls="userroutes">
+        User : <i class="far fa-question-circle"></i>
+    </a>
+    <div class="collapse show" id="userroutes">
+        {{#each UsersRoutes}}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    /users{{this.path}}
+                    <small class="text-muted"><span class="badge badge-secondary">{{this.methods}}</span></small>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+</div>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#quizroutes" role="button" aria-expanded="false" aria-controls="productroutes">
+        Quiz : <i class="far fa-question-circle"></i>
+    </a>
+    <div class="collapse" id="quizroutes">
+        {{#each quizRoutes}}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    /quizes{{this.path}}
+                    <small class="text-muted"><span class="badge badge-secondary">{{this.methods}}</span></small>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+</div>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#questionroutes" role="button" aria-expanded="false" aria-controls="productroutes">
+        Question : <i class="far fa-question-circle"></i>
+    </a>
+    <div class="collapse" id="questionroutes">
+        {{#each questionRoutes}}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    /questions{{this.path}}
+                    <small class="text-muted"><span class="badge badge-secondary">{{this.methods}}</span></small>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+</div>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active" data-toggle="collapse" href="#messageroutes" role="button" aria-expanded="false" aria-controls="productroutes">
+        Message : <i class="far fa-question-circle"></i>
+    </a>
+    <div class="collapse" id="messageroutes">
+        {{#each messageRoutes}}
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    /messages{{this.path}}
+                    <small class="text-muted"><span class="badge badge-secondary">{{this.methods}}</span></small>
+                </div>
+            </a>
+        {{/each}}
+    </div>
+</div>

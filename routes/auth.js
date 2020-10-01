@@ -1,0 +1,29 @@
+const express = require('express')
+const router = express.Router()
+const jwt = require('jsonwebtoken');
+const expressJwt = require('express-jwt');
+const cors = require('cors')
+const Admin = require('../models/admin')
+
+var corsOptions = {
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+router.post('/', cors(corsOptions), function(req, res) {
+    const body = req.body;
+
+    console.log(body)
+
+    Admin.findOne({username: body.username, password: body.password}, (err, user) => {
+        if(err) return res.sendStatus(401);
+        if(user){
+            var token = jwt.sign({userID: user.id}, 'todo-app-super-shared-secret', {expiresIn: '2h'});
+            res.send({token});
+        } else {
+            res.sendStatus(401);
+        }
+    })
+});
+
+module.exports = router
