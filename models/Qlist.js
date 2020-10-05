@@ -4,12 +4,11 @@ var qlistSchema = new mongoose.Schema({
     name: {
         type: String
     },
-    thumbnail: {
+    picture: {
         type: String
     },
-    questions: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Question'
+    category: {
+        type: String
     },
     paid: {
         type: Boolean
