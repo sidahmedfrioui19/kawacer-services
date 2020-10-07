@@ -7,8 +7,27 @@ module.exports.findAll = (res) => {
     })
 }
 
+module.exports.subs = (res) => {
+    Qlist.find({ paid: "true" }, (err, quizList) => {
+        res.json(quizList)
+    })
+}
+
+module.exports.guest = (res) => {
+    Qlist.find({ paid: "false" }, (err, quizList) => {
+        res.json(quizList)
+    })
+}
+
+module.exports.find = (q, res) => {
+    Qlist.find({ $text: { $search: q }}, (err, quizList) => {
+        res.json(quizList)
+    })
+}
+
 module.exports.getCat = (id, res) => {
-    Qlist.find({category: id}, (err, quizList) => {
+    Qlist.findOne({category: id}, (err, quizList) => {
+        console.log(quizList)
         res.json(quizList)
     })
 }
