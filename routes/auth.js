@@ -3,7 +3,7 @@ const router = express.Router()
 const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
 const cors = require('cors')
-const Admin = require('../models/admin')
+const User = require('../models/User')
 
 var corsOptions = {
     origin: 'http://localhost:4200',
@@ -15,11 +15,11 @@ router.post('/', cors(corsOptions), function(req, res) {
 
     console.log(body)
 
-    Admin.findOne({username: body.username, password: body.password}, (err, user) => {
+    User.findOne({email: body.username, password: body.password}, (err, user) => {
         if(err) return res.sendStatus(401);
         if(user){
             var token = jwt.sign({userID: user.id}, 'todo-app-super-shared-secret', {expiresIn: '2h'});
-            res.send({token});
+            res.send({token, user});
         } else {
             res.sendStatus(401);
         }
