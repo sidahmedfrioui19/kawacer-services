@@ -2,7 +2,6 @@ const User = require('../models/User')
 
 module.exports.findAll = (res) => {
     User.find({}, (err, users) => {
-        if (err) throw err
         res.json(users)
     })
 }
