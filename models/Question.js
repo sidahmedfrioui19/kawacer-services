@@ -10,37 +10,20 @@ var questionSchema = new mongoose.Schema({
     picture: {
         type: String
     },
-    suggestion1: {
-        value: {
-            type: String
-        },
-        correct: {
-            type: Boolean
-        }
+    a: {
+        type: String
     },
-    suggestion2: {
-        value: {
-            type: String
-        },
-        correct: {
-            type: Boolean
-        }
+    b: {
+        type: String
     },
-    suggestion3: {
-        value: {
-            type: String
-        },
-        correct: {
-            type: Boolean
-        }
+    c: {
+        type: String
     },
-    suggestion4: {
-        value: {
-            type: String
-        },
-        correct: {
-            type: Boolean
-        }
+    d: {
+        type: String
+    },
+    answer: {
+        type: String
     }
 })
 

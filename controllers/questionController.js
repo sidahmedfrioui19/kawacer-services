@@ -24,22 +24,11 @@ module.exports.new = (req, res) => {
         quiz: req.body.quiz,
         value: req.body.name,
         picture: req.body.picture,
-        suggestion1: {
-            value: req.body.suggestion1.value,
-            correct: req.body.suggestion1.correct
-        },
-        suggestion2: {
-            value: req.body.suggestion2.value,
-            correct: req.body.suggestion2.correct
-        },
-        suggestion3: {
-            value: req.body.suggestion3.value,
-            correct: req.body.suggestion3.correct
-        },
-        suggestion4: {
-            value: req.body.suggestion4.value,
-            correct: req.body.suggestion4.correct
-        }
+        a: req.body.a,
+        b: req.body.b,
+        c: req.body.c,
+        d: req.body.d,
+        answer: req.body.answer
     })
 
     newQuestion.save((err) => {

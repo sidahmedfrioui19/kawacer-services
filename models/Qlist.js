@@ -2,8 +2,7 @@ var mongoose = require('mongoose')
 
 var qlistSchema = new mongoose.Schema({
     name: {
-        type: String,
-        es_indexed:true
+        type: String
     },
     picture: {
         type: String
@@ -16,6 +15,6 @@ var qlistSchema = new mongoose.Schema({
     }
 })
 
-qlistSchema.index({'$**': 'text'});
+qlistSchema.index({'name': 'text', 'category': 'text'});
 
 var Qlist = module.exports = mongoose.model('qlist', qlistSchema)
