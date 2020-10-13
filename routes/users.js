@@ -8,6 +8,14 @@ router.get('/', (req, res) => {
   userController.findAll(res)
 })
 
+router.get('/admin', (req, res) => {
+  userController.getAdmin(req, res)
+})
+
+router.get('/:id', (req, res) => {
+  userController.findbyID(req, res)
+})
+
 router.get('/search/:query', (req, res) => {
   userController.findUser(req.params.query, res);
 })
@@ -21,17 +29,13 @@ router.post('/update', (req, res) => {
   userController.update(userData, res)
 })
 
-router.post('/add', (req, res) => {
+router.post('/', (req, res) => {
   var user = req.body;
   userController.create(user, res)
 })
 
-router.post('/login', (req, res) => {
-  
-})
-
-router.get('/logout', (req, res) => {
-
+router.post('/edit', (req, res) => {
+  userController.update(req, res)
 })
 
 module.exports = router
