@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
     quizController.findAll(res)
 })
 
+router.get('/scores/:user', (req, res) => {
+    quizController.getScores(req, res)
+})
+
 router.get('/quiz/:query', (req, res) => {
     quizController.find(req.params.query, res)
 })
@@ -36,8 +40,11 @@ router.post('/', (req, res) => {
 })
 
 router.post('/update', (req, res) => {
-    console.log(req.body)
     quizController.update(req, res)
+})
+
+router.post('/score', (req, res) => {
+    quizController.setHighScore(req, res)
 })
 
 module.exports = router

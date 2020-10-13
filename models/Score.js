@@ -10,8 +10,11 @@ const ScoreSchema = mongoose.Schema({
     quiz: {
         type: String
     },
+    picture: {
+        type: String
+    },
     user: {
-        type: Array
+        type: String
     }
 })
 

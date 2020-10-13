@@ -1,10 +1,19 @@
 var Qlist = require('../models/Qlist')
 var Category = require('../models/Category')
+var Score = require('../models/Score')
 
 module.exports.findAll = (res) => {
     Qlist.find({}, (err, quizList) => {
         if (err) throw err;
         res.json(quizList)
+    })
+}
+
+module.exports.getScores = (req, res) => {
+    Score.find({ user : req.params.user }, (err, scoreList) => {
+        if (err) throw err;
+        res.json(scoreList)
+        console.log(scoreList)
     })
 }
 
@@ -84,5 +93,20 @@ module.exports.update = (req, res) => {
     Qlist.update({ _id: req.body._id }, req.body, (err, quiz) => {
         if (err) throw err;
         res.json(quiz)
+    })
+}
+
+module.exports.setHighScore = (req, res) => {
+    var highScore = new Score({
+        score: req.body.score,
+        questions: req.body.questions,
+        quiz: req.body.quiz,
+        user: req.body.user,
+        picture: req.body.picture
+    })
+
+    highScore.save((err) => {
+        if (err) throw err;
+        res.json(highScore)
     })
 }
