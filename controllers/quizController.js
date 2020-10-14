@@ -32,10 +32,14 @@ module.exports.guest = (res) => {
 }
 
 module.exports.find = (q, res) => {
-    Qlist.find({ $text: { $search: q }}, (err, quizList) => {
-        if (err) throw err;
-        res.json(quizList)
-    })
+    if(q === undefined || q === '') {
+        res.json({})
+    } else {
+        Qlist.find({ $text: { $search: q }}, (err, quizList) => {
+            if (err) throw err
+            res.json(quizList)
+        })
+    }
 }
 
 module.exports.getCat = (id, res) => {
@@ -102,7 +106,8 @@ module.exports.setHighScore = (req, res) => {
         questions: req.body.questions,
         quiz: req.body.quiz,
         user: req.body.user,
-        picture: req.body.picture
+        picture: req.body.picture,
+        quizid: req.body.quizid
     })
 
     highScore.save((err) => {

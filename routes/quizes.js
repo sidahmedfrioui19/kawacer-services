@@ -11,7 +11,7 @@ router.get('/scores/:user', (req, res) => {
     quizController.getScores(req, res)
 })
 
-router.get('/quiz/:query', (req, res) => {
+router.get('/quiz/search/:query', (req, res) => {
     quizController.find(req.params.query, res)
 })
 

@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
     messageController.getMessages(req, res)
 })
 
+router.get('/:id', (req, res) => {
+    messageController.getMessagebyID(req, res)
+})
+
 router.get('/delete/:id', (req, res) => {
     messageController.deleteMessage(req, res)
 })

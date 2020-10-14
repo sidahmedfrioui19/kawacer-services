@@ -15,6 +15,9 @@ const ScoreSchema = mongoose.Schema({
     },
     user: {
         type: String
+    },
+    quizid: {
+        type: String
     }
 })
 
