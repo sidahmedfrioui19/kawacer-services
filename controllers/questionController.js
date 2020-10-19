@@ -22,7 +22,7 @@ module.exports.new = (req, res) => {
     console.log(req.body)
     var newQuestion = new Question({
         quiz: req.body.quiz,
-        value: req.body.name,
+        value: req.body.value,
         picture: req.body.picture,
         a: req.body.a,
         b: req.body.b,
