@@ -24,10 +24,10 @@ module.exports.new = (req, res) => {
         quiz: req.body.quiz,
         value: req.body.value,
         picture: req.body.picture,
-        a: req.body.a,
-        b: req.body.b,
-        c: req.body.c,
-        d: req.body.d,
+        a: '1',
+        b: '2',
+        c: '3',
+        d: '4',
         answer: req.body.answer
     })
 
