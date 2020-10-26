@@ -11,16 +11,20 @@ var questionSchema = new mongoose.Schema({
         type: String
     },
     a: {
-        type: String
+        type: String,
+        default: '1'
     },
     b: {
-        type: String
+        type: String,
+        default: '2'
     },
     c: {
-        type: String
+        type: String,
+        default: '3'
     },
     d: {
-        type: String
+        type: String,
+        default: '4'
     },
     answer: {
         type: String
