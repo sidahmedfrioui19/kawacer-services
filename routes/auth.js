@@ -6,7 +6,7 @@ const cors = require('cors')
 const User = require('../models/User')
 
 var corsOptions = {
-    origin: 'https://kawacer.com',
+    origin: 'http://kawacer.com',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
