@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var connection = 'mongodb+srv://sidahmed:sidahmed19@cluster0.nsbuk.mongodb.net/ecm?retryWrites=true&w=majority'
+var connection = 'mongodb+srv://sidahmed:11092000sidahmed@cluster0.nsbuk.mongodb.net/ecm?retryWrites=true&w=majority'
 
 mongoose.connect(connection, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true }, (err, success) => {
   console.log('Connecting to mongodb url: ' + connection)
