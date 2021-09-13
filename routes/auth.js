@@ -6,7 +6,7 @@ const cors = require('cors')
 const User = require('../models/User')
 
 var corsOptions = {
-    origin: 'http://kawacer.com',
+    origin: 'https://kawacer.netlify.app',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
