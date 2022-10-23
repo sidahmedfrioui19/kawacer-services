@@ -10,7 +10,7 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-router.post('/', function(req, res) {
+router.post('/', cors(corsOptions), function(req, res) {
     const body = req.body;
 
     console.log(body)
